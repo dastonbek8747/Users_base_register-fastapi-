@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+sqlalchemy
+authx
+psycopg2
+passlib
+pydantic[email]
