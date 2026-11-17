@@ -1,3 +1,5 @@
+import os
+
 from fastapi import APIRouter, HTTPException, status
 from sqlalchemy.orm import Session
 import models, schemas
@@ -10,8 +12,8 @@ router = APIRouter()
 # AuthX konfiguratsiyasi
 config = AuthXConfig()
 config.JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
-config.JWT_ACCESS_COOKIE_NAME = "my_access_token"  # ✅ to'g'rilandi
-config.JWT_TOKEN_LOCATION = ["cookies"]  # yoki ["headers"] agar cookie emas bo‘lsa
+config.JWT_ACCESS_COOKIE_NAME = "my_access_token"
+config.JWT_TOKEN_LOCATION = ["cookies"]
 token_auth = AuthX(config)
 
 
